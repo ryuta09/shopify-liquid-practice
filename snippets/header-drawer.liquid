@@ -12,8 +12,8 @@
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span>
-        {{- 'icon-hamburger.svg' | inline_asset_content -}}
-        {{- 'icon-close.svg' | inline_asset_content -}}
+        {{- 'c_icon-hamburger-open.svg' | inline_asset_content -}}
+        {{- 'c_icon-hamburger-close.svg' | inline_asset_content -}}
       </span>
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
@@ -28,7 +28,7 @@
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
-                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %} c_header-menu-level1"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset {% if link.child_active %} menu-drawer__menu-item--active {% endif %} c_header-menu-level1"
                       >
                       <span class="c_header-menu-title--wrapper">
                         <span class="c_header-menu-title--img">{{ link_titles[0] | inline_asset_content }}</span>
@@ -152,13 +152,13 @@
                       {{ customer | avatar }}
                     {%- else -%}
                       <span class="svg-wrapper">
-                        {{- 'icon-account.svg' | inline_asset_content -}}
+                        {{- 'c_icon-account.svg' | inline_asset_content -}}
                       </span>
                     {%- endif -%}
                   </account-icon>
                 {%- else -%}
                   <span class="svg-wrapper">
-                    {{- 'icon-account.svg' | inline_asset_content -}}
+                    {{- 'c_icon-account.svg' | inline_asset_content -}}
                   </span>
                 {%- endif -%}
                 {%- liquid

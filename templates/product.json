@@ -12,15 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
           "settings": {}
         },
         "price": {
@@ -38,82 +35,41 @@
           "type": "quantity_selector",
           "settings": {}
         },
-        "buy_buttons": {
+        "buy_buttons_AWkfgq": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
-        "collapsible_tab_CJeFTh": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "素材",
-            "icon": "shirt",
-            "content": "<p>セルロース100%<br/>※商品写真はできる限り実物の色に近づけるよう加工しておりますが、お客様のお使いのモニター設定、お部屋の照明等により実際の商品と色味が異なる場合がございます。<br/>※生地の染めは1点1点職人さんの手作業で行うため、機械のように完璧ではなく僅かに色ムラがございます。それも味と感じていただけたら幸いです。</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_ikLWdz": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "お届け時期",
-            "icon": "stopwatch",
-            "content": "<p>お支払いの確認後4~6日以内</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_8MnzMf": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "送料",
-            "icon": "truck",
-            "content": "<p>全国一律500円<br/>※日本国内発送に限り、35,000円以上のお買上げの方は送料無料</p>",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "description",
         "price",
         "variant_picker",
         "quantity_selector",
-        "buy_buttons",
-        "description",
-        "collapsible_tab_CJeFTh",
-        "collapsible_tab_ikLWdz",
-        "collapsible_tab_8MnzMf",
-        "share"
+        "buy_buttons_AWkfgq"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "lightbox",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 48,
+        "padding_bottom": 96
       }
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -130,13 +86,54 @@
         "padding_bottom": 28
       }
     },
-    "contact_form_tfe6e6": {
-      "type": "contact-form",
-      "name": "t:sections.contact-form.presets.name",
+    "collapsible_content_ahMdzL": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_dcekCp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "香り",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.fragrance | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_TKgaYY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "全成分",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom.ingredient | metafield_tag }}</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_R36AEM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "使用方法",
+            "icon": "none",
+            "row_content": "<p>{{ product.metafields.custom[\"how-to\"] | metafield_tag }}</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_dcekCp",
+        "collapsible_row_TKgaYY",
+        "collapsible_row_R36AEM"
+      ],
+      "name": "t:sections.collapsible_content.presets.name",
       "settings": {
-        "heading": "お問い合わせフォーム",
+        "caption": "",
+        "heading": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
         "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -145,6 +142,6 @@
   "order": [
     "main",
     "related-products",
-    "contact_form_tfe6e6"
+    "collapsible_content_ahMdzL"
   ]
 }
