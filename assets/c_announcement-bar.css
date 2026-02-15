@@ -1,0 +1,15 @@
+.announcement-bar__message {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.56px;
+  padding: 12px 0;
+  min-height: initial;
+}
+
+@media screen and (max-width:756px) {
+  .announcement-bar__message {
+    padding: 6px 0;
+  }
+}

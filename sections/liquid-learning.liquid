@@ -1,0 +1,93 @@
+<div class="page-width liquid-box">
+  {% comment %} {% unless product.title contains "Barber" %}
+    <p>Barberの商品ではありません。</p>
+  {% endunless %} {% endcomment %}
+
+  {% comment %} {% case product.title.size %}
+    {% when 8 %}
+      <p>8文字です！</p>
+    {% when 9 %}
+      <p>9文字です！</p>
+    {% when 10 %}
+      <p>10文字です！</p>
+    {% else %}
+      
+  {% endcase %} {% endcomment %}
+
+  {% comment %} {% for product in collection.products limit: 2 %}
+  {% if  forloop.last %}
+      {{ product.title }}<br />
+      {{ product.price | money }}<br />
+      <img src="{{ product.featured_image |  image_url: width: 300  }}" alt="">  
+    {% endif %}
+  {% endfor %} {% endcomment %}
+
+  {% comment %} {% paginate collection.products by 5 %}
+    {% for product in collection.products %}
+      {{ product.title }}<br />
+      {{ product.price | money }}<br />
+      <img src="{{ product.featured_image |  image_url: width: 300  }}" alt="">  
+    {% endfor %}
+    <a href="{{ paginate.previous.url }}">{{ paginate.previous.title }}</a>
+    {{ paginate.current_page }}
+    <a href="{{ paginate.next.url }}">{{ paginate.next.title }}</a>
+  {% endpaginate %} {% endcomment %}
+
+  {% comment %} {% for i in (2..5) reversed %}
+    {{ i }}
+  {% endfor %} {% endcomment %}
+{% comment %} 
+  {% assign fruit = 'バナナ' %}
+  {{ fruit }}<br />
+  {% assign fruits = 'バナナ, りんご, みかん' |  split: ', ' %}
+  {% for fruit in fruits %}
+    <p>{{ forloop.index }}{{ fruit }}</p>
+  {% endfor %}
+
+  {% assign number = 1 %}
+  
+  {{ number }} {% endcomment %}
+
+  {% comment %} {% capture text %}
+    {{ fruit }}
+    <p>テスト</p>
+    {{ number }}
+    <p>私の好きなフルーツは{{ fruit }}です</p>
+  {% endcapture %}
+  {{ text }} {% endcomment %}
+
+  {% assign hello = 'Hello World' %}
+  {% render 'hello' for hello as text  %}
+
+  <h1 class="h1">Hello World!</h1>
+</div>
+
+
+<style>
+  .liquid-box {
+    margin: 40px;
+    padding: 40px;
+    border: 4px dashed #00B0B0;
+  }
+</style>
+
+  {% stylesheet %}
+  {% endstylesheet %}
+
+
+{% schema %}
+  {
+    "name": "Liquid学習用",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "ここでLiquidのコードを書いて学習していきます！"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Liquid学習"
+      }
+    ]
+  }
+{% endschema %}
